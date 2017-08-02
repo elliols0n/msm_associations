@@ -43,3 +43,33 @@
   </div>
 </div>
 
+<div class="page-header">
+  <h3>Add a new Character</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form <form action="/create_movie" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Input for hidden actor id -->
+      <input type="hidden" name="actor_id" value="<%= @actor.id %>">
+
+      <!-- Label and input for character name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Character name
+        </label>
+
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control">
+      </div>
+
+      <button class="btn btn-success">
+        Create Character
+      </button>
+      or
+      <a href="/characters">Cancel</a>
+    </form>
+  </div>
+</div>
