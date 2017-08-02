@@ -15,7 +15,7 @@
       <dd><%= @actor.bio %></dd>
 
       <dt>Image url</dt>
-      <dd><%= @actor.image_url %></dd>
+      <dd><img src ="<%= @actor.image_url %>"></dd>
 
       <dt>Character Count</dt>
       <dd><%= @actor.characters.count %></dd>
@@ -23,7 +23,7 @@
       <dt>Filmography</dt>
       <dd>
         <% @actor.characters.each do |character| %>
-          <li><a href="/movies/<%= character.movie.id %>"><%= character.movie.title %></a>(<%= character.name %>)</li>
+          <li><a href="/movies/<%= character.movie.id %>"><%= character.movie.title %></a> (<%= character.name %>)</li>
         <% end %>
       </dd>
 
@@ -42,3 +42,4 @@
     </div>
   </div>
 </div>
+
