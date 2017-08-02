@@ -24,7 +24,7 @@
           Movie
         </label>
 
-        <input type="text" id="movie_id" name="movie_id" placeholder="Movie" class="form-control" value="<%= @character.movie_id %>">
+        <input type="text" id="movie_id" name="movie_id" placeholder="Movie" class="form-control" value="<%= Movie.find_by( :id => @character.movie_id).title %>">
       </div>
 
       <!-- Label and input for actor_id -->
@@ -33,7 +33,7 @@
           Actor
         </label>
 
-        <input type="text" id="actor_id" name="actor_id" placeholder="Actor" class="form-control" value="<%= @character.actor_id %>">
+        <input type="text" id="actor_id" name="actor_id" placeholder="Actor" class="form-control" value="<%= Actor.find_by( :id => @character.actor_id).name %>">
       </div>
 
       <!-- Label and input for name -->
