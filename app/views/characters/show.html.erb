@@ -9,7 +9,7 @@
       <dd><%= Movie.find_by( :id => @character.movie_id).title %></dd>
 
       <dt>Actor</dt>
-      <dd><%= @character.actor_id %></dd>
+      <dd><%= Actor.find_by( :id => @character.actor_id).name %></dd>
 
       <dt>Name</dt>
       <dd><%= @character.name %></dd>
