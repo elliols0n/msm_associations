@@ -12,13 +12,15 @@
 #
 
 class Actor < ApplicationRecord
-#   Character:
-#   - movie_id: must be present
-  validates :movie_id, :presence => true
-  
-#   - actor_id: must be present
-validates :actor_id, :presence => true
+#   Actor:
+#   - name: must be present; must be unique in combination with dob
+validates :name, :presence => true, :uniqueness => { :scope => :dob }
 
-#   - name: no rules
+#   - dob: no rules
+#   - bio: no rules
+#   - image_url: no rules
+
+has_many(:characters, :class_name => "Character", :foreign_key => "actor_id")
+has_many(:movies, :through => :characters)
 
 end

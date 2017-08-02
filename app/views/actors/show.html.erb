@@ -17,6 +17,16 @@
       <dt>Image url</dt>
       <dd><%= @actor.image_url %></dd>
 
+      <dt>Character Count</dt>
+      <dd><%= @actor.characters.count %></dd>
+
+      <dt>Filmography</dt>
+      <dd>
+        <% @actor.characters.each do |character| %>
+          <li><a href="/movies/<%= character.movie.id %>"><%= character.movie.title %></a>(<%= character.name %>)</li>
+        <% end %>
+      </dd>
+
     </dl>
 
     <div class="btn-group btn-group-justified">
