@@ -67,15 +67,9 @@
           Director
         </label>
 
-        <!--Long way of making a dropdown-->
-        <!--<select name="director_id" class="form-control">-->
-        <!--  <% Director.all.each do |director| %>-->
-        <!--  <option value="<%= director.id %>"><%= director.name %></option>-->
-        <!--  <% end %>-->
-        <!--</select>-->
-        
-        <!--Fourth argument `@movie.director_id` is what locally saves director id in case of validation error-->
         <%= select_tag("director_id", options_from_collection_for_select(Director.all, :id, :name, @movie.director_id), :class => "form-control") %>
+        
+        <a href="/directors/new">or add a new director</a>
       </div>
 
       <button class="btn btn-success">
