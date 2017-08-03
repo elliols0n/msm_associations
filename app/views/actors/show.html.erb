@@ -49,12 +49,23 @@
 
 <div class="row">
   <div class="col-md-12">
-    <form <form action="/create_movie" method="post">
+    <form <form action="/create_character" method="post">
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
       <!-- Input for hidden actor id -->
       <input type="hidden" name="actor_id" value="<%= @actor.id %>">
+
+      <div class="form-group">
+        <label for="movie_id" class="control-label">
+          Movie
+        </label>
+
+        <%= select_tag(:movie_id, options_from_collection_for_select(Movie.all, :id, :title), :class=>"form-control") %>
+        
+        <a href="/movies/new">or add a new movie</a>
+
+      </div>
 
       <!-- Label and input for character name -->
       <div class="form-group">
